@@ -11,11 +11,12 @@ export class AppComponent implements OnInit {
   currentLong: any;
   map: any;
   marker: any;
+  externalDiv: any;
   constructor() {
 
 }
 ngOnInit(): void {}
-findMe() {
+/* findMe() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
       this.showPosition(position);
@@ -23,7 +24,7 @@ findMe() {
   } else {
     alert("Geolocation is not supported by this browser.");
   }
-}
+} */
 trackMe() {
   if (navigator.geolocation) {
     this.isTracking = true;
@@ -35,7 +36,7 @@ trackMe() {
   }
 }
 
-showPosition(position: GeolocationPosition) {
+/* showPosition(position: GeolocationPosition) {
   this.currentLat = position.coords.latitude;
   this.currentLong = position.coords.longitude;
 
@@ -51,10 +52,12 @@ showPosition(position: GeolocationPosition) {
   else {
     this.marker.setPosition(location);
   }
+  this.externalDiv = location;
   console.log(location)
-}
+} */
 showTrackingPosition(position: GeolocationPosition) {
-  console.log(`tracking postion:  ${position.coords.latitude} - ${position.coords.longitude}`);
+  console.log(`tracking postion:  ${position.coords.latitude} , ${position.coords.longitude}`);
+  this.externalDiv = `tracking postion:  ${position.coords.latitude} , ${position.coords.longitude}`;
   this.currentLat = position.coords.latitude;
   this.currentLong = position.coords.longitude;
 
