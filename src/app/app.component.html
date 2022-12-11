@@ -1,4 +1,12 @@
 <!-- <button (click)="findMe()">find me</button>
  --><button (click)="trackMe()">track me</button>
-<div>{{externalDiv}}</div>
+ <button (click)="stop()">Stop tracking me</button>
+<div *ngIf="showInfo">
+    <div  *ngFor="let data of datas">
+        <div>Tracking info</div>
+        <div>Latitude: {{data.latitude}}</div>
+        <div>Longitude: {{data.longitude}}</div>
+        <div>Created at: {{data.created_at }}</div>
+    </div>
+</div>
 <router-outlet></router-outlet>
