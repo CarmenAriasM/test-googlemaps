@@ -1,11 +1,25 @@
-<button (click)="trackMe()">track me</button>
-<button (click)="stop()">Stop tracking me</button>
-<div *ngIf="showInfo">
-    <div  *ngFor="let data of datas">
-        <div>Tracking info</div>
-        <div>Latitude: {{data.latitude}}</div>
-        <div>Longitude: {{data.longitude}}</div>
-        <div>Created at: {{data.created_at }}</div>
+<div class="main">
+    <div class="img-container">
+        <img src="assets/logo-xp.png" alt="Logo">
     </div>
+    <div class="btn-container">
+        <button (click)="trackMe()">Start journey</button>
+        <button (click)="stop()">Stop journey</button>
+        <div *ngIf="datas[0]" class="data">
+            <div>Your current location is: </div>
+            <div>Latitude: {{datas[datas.length -1].latitude}}</div>
+            <div>Longitude: {{datas[datas.length -1].longitude}}</div>
+            <div> Created at: {{datas[datas.length -1].created_at}}</div>
+        </div>
+    </div>
+    <!-- <div *ngIf="showInfo">
+        <div  *ngFor="let data of datas">
+            <div>Tracking info</div>
+            <div>Latitude: {{data.latitude}}</div>
+            <div>Longitude: {{data.longitude}}</div>
+            <div>Created at: {{data.created_at }}</div>
+        </div>
+    </div> -->
+    <div class="chosen-route">You took bus A</div>
 </div>
 <router-outlet></router-outlet>

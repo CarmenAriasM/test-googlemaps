@@ -26,3 +26,65 @@ body {
     flex: 1;
     background: #f0f0f0;
 }
+button, .chosen-route {
+    width: 244px;
+    height: 42px;
+    border: 2px solid #98C3D8;
+    border-radius: 21.5px;
+    background: transparent;
+    font-size: 17px;
+    font-weight: 300;
+    background-color: #98C3D8;
+    color: white;
+    cursor: pointer;
+    transition: all .3s;
+}
+button:hover {
+    background-color: #98C3D8;
+    opacity: .8;
+}
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.chosen-route {
+    width: fit-content;
+    min-width: 244px;
+    min-height: 42px;
+    height: fit-content;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    margin-bottom: 80px;
+    color: black;
+    background-color: transparent;
+    border: 2px solid #98C3D8;
+    padding: 10px;
+    cursor: auto;
+}
+.main {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+.data {
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
