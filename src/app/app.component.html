@@ -3,7 +3,8 @@
         <img src="assets/logo-xp.png" alt="Logo">
     </div>
     <div class="btn-container">
-        <button (click)="trackMe()">Start journey</button>
+        <input type="text" class="input" (keyup)="getValue($event)" #participant id="participant" placeholder="PARTICIPANT NUMBER">
+        <button [disabled]="participant.value == ''" (click)="trackMe()" [ngClass]="{'disabled': participant.value == '' }">Start journey</button>
         <button (click)="stop()">Stop journey</button>
         <div *ngIf="datas[0]" class="data">
             <div>Your current location is: </div>

@@ -88,3 +88,26 @@ button:hover {
     flex-direction: column;
     gap: 10px;
 }
+.input {
+    width: 244px;
+    height: 42px;
+    text-align: center;
+    color: #98C3D8;
+    border: 2px solid #98C3D8;
+    border-radius: 21.5px;
+    background: transparent;
+    caret-color: #000;
+    box-sizing: border-box;
+}
+input::placeholder {
+    font-size: 17px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+  }
+  .disabled {
+    opacity: .4;
+  }
+  .disabled:hover {
+    opacity: .4;
+  }
