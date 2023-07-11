@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
   sendData() {
     let object = {IdUID: this.input};
     const formData = new FormData();
-    formData.append('IdUID', this.input );
+    formData.append('id', this.input );
     this.backendService.login(formData).subscribe((data: any) => {
       console.log(data)
     }, (error: Error) => { 
