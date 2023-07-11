@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   clearId: any;
   input: any;
 
+  csv: any;
   constructor( public backendService: GooglemapsService) {}
 
   ngOnInit(): void {}
@@ -33,10 +34,9 @@ export class AppComponent implements OnInit {
     }
   }
   sendData() {
-    let object = {IdUID: this.input};
     const formData = new FormData();
     formData.append('id', this.input );
-    this.backendService.login(formData).subscribe((data: any) => {
+    this.backendService.start(formData).subscribe((data: any) => {
       console.log(data)
     }, (error: Error) => { 
       console.log(error)
@@ -60,12 +60,20 @@ export class AppComponent implements OnInit {
     ]
     .map(e => e.join(",")) 
     .join("\n");
-  
+    this.csv = csvString;
     console.log(csvString);
   }
   stop() {
     navigator.geolocation.clearWatch(this.clearId);
     console.log('Stopped tracking successfully')
+    const formData = new FormData();
+    formData.append('id', this.input );
+    formData.append('data', this.csv );
+    this.backendService.stop(formData).subscribe((data: any) => {
+      console.log(data)
+    }, (error: Error) => { 
+      console.log(error)
+    })
   }
   getValue(event: any) {
     this.input = event.target.value;
