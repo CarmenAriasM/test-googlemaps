@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+// @ts-nocheck
+import { Component, OnInit, HostListener } from '@angular/core';
 import { GooglemapsService } from './services/googlemaps.service';
 @Component({
   selector: 'app-root',
@@ -18,7 +19,8 @@ export class AppComponent implements OnInit {
   chosenRoute: string = '';
   constructor( public backendService: GooglemapsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   trackMe() {
     this.sendData()
@@ -79,5 +81,9 @@ export class AppComponent implements OnInit {
   }
   getValue(event: any) {
     this.input = event.target.value;
+  }
+  @HostListener('window:beforeunload', ['$event'])
+  doSomething($event) {
+    $event.returnValue = '';
   }
 }

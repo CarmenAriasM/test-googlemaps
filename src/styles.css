@@ -7,10 +7,11 @@ html {
     justify-content: center;
 }
 body {
-    height: 100%;
     box-sizing: border-box;
     margin: 0;
     display: flex;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
+    min-height: 100%;
+    height: fit-content;
 }

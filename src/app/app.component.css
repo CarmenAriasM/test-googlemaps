@@ -2,6 +2,7 @@ html {
     font-family: sans-serif;
     line-height: 1.15;
     height: 100%;
+    overflow: auto;
 }
 
 body {
@@ -12,8 +13,10 @@ body {
     line-height: 1.5;
     color: #1a1a1a;
     text-align: left;
-    height: 100%;
     background-color: #fff;
+    overflow: auto;
+    height: fit-content;
+
 }
 
 .container {
@@ -49,6 +52,7 @@ button:hover {
     gap: 10px;
     align-items: center;
     justify-content: center;
+    margin: 40px 0;
 }
 .img-container {
     display: flex;
@@ -57,21 +61,17 @@ button:hover {
     margin-top: 20px;
 }
 .chosen-route {
-    width: fit-content;
     min-width: 244px;
     min-height: 42px;
     height: fit-content;
     text-align: center;
     align-items: center;
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-    margin-bottom: 80px;
     color: black;
     background-color: transparent;
     border: 2px solid #98C3D8;
     padding: 10px;
     cursor: auto;
+    margin: 30px auto;
 }
 .main {
     box-sizing: border-box;
@@ -118,4 +118,5 @@ input::placeholder {
 .main-chosen-route {
     justify-content: space-between;
     max-height: unset;
+    display: block;
 }
