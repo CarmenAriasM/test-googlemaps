@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main" [ngClass]="{'main-no-chosen-route': !chosenRoute, 'main-chosen-route': chosenRoute}">
     <div class="img-container">
         <img src="assets/logo-xp.png" alt="Logo">
     </div>
@@ -21,6 +21,6 @@
             <div>Created at: {{data.created_at }}</div>
         </div>
     </div> -->
-    <div class="chosen-route">You took bus A</div>
+    <div class="chosen-route" *ngIf="chosenRoute">{{chosenRoute}}</div>
 </div>
 <router-outlet></router-outlet>

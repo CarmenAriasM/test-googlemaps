@@ -111,3 +111,11 @@ input::placeholder {
   .disabled:hover {
     opacity: .4;
   }
+.main-no-chosen-route {
+    justify-content: space-around;
+    max-height: 500px;
+}
+.main-chosen-route {
+    justify-content: space-between;
+    max-height: unset;
+}

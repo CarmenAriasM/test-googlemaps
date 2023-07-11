@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   input: any;
 
   csv: any;
+  chosenRoute: string = '';
   constructor( public backendService: GooglemapsService) {}
 
   ngOnInit(): void {}
@@ -71,6 +72,7 @@ export class AppComponent implements OnInit {
     formData.append('data', this.csv );
     this.backendService.stop(formData).subscribe((data: any) => {
       console.log(data)
+      this.chosenRoute = data;
     }, (error: Error) => { 
       console.log(error)
     })
