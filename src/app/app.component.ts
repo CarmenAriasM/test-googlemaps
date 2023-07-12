@@ -69,6 +69,7 @@ export class AppComponent implements OnInit {
   stop() {
     // let encodedUri = encodeURI(this.csv);
     // window.open(encodedUri);
+    // to comment
     navigator.geolocation.clearWatch(this.clearId);
     console.log('Stopped tracking successfully')
     const formData = new FormData();
