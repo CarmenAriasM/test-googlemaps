@@ -73,7 +73,8 @@ export class AppComponent implements OnInit {
     console.log('Stopped tracking successfully')
     const formData = new FormData();
     formData.append('id', this.input );
-    formData.append( 'data', new Blob([this.csv], { type: 'text/csv' }), 'csv');
+    formData.append('data', this.csv );
+    // formData.append( 'data', new Blob([this.csv], { type: 'text/csv' }), 'csv');
     this.backendService.stop(formData).subscribe((data: any) => {
       console.log(data)
       this.chosenRoute = data;
