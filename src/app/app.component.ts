@@ -51,9 +51,9 @@ export class AppComponent implements OnInit {
     console.log(this.datas)
     const csvString = [
       [
-        "Latitude",
-        "Longitude",
-        "Created_at"
+        "latitude",
+        "longitude",
+        "created_at"
       ],
       ...this.datas.map((item: { latitude: any; longitude: any; created_at: any; }) => [
         item.latitude,
