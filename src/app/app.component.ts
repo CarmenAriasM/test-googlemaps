@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
     this.showInfo = true;
     this.datas.push({latitude: position.coords.latitude, longitude: position.coords.longitude, created_at: new Date()})
     console.log(this.datas)
-    const csvString = "data:text/csv;charset=utf-8,"  + [
+    const csvString = /* "data:text/csv;charset=utf-8,"  +  */[
       [
         "latitude",
         "longitude",
@@ -67,13 +67,13 @@ export class AppComponent implements OnInit {
     console.log(csvString);
   }
   stop() {
-    let encodedUri = encodeURI(this.csv);
-    window.open(encodedUri);
+    // let encodedUri = encodeURI(this.csv);
+    // window.open(encodedUri);
     navigator.geolocation.clearWatch(this.clearId);
     console.log('Stopped tracking successfully')
     const formData = new FormData();
     formData.append('id', this.input );
-    formData.append('data', this.csv );
+    formData.append( 'data', new Blob([this.csv], { type: 'text/csv' }), 'csv');
     this.backendService.stop(formData).subscribe((data: any) => {
       console.log(data)
       this.chosenRoute = data;
