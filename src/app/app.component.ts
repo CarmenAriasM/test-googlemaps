@@ -52,7 +52,7 @@ export class AppComponent implements OnInit {
       [
         "latitude",
         "longitude",
-        "created_at"
+        "created"
       ],
       ...this.datas.map((item: { latitude: any; longitude: any; created_at: any; }) => [
         item.latitude,
