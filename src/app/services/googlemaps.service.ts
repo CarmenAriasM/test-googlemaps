@@ -19,6 +19,6 @@ export class GooglemapsService {
     return this.http.post( this.apiUrl + 'User/startTrack', data);
   } 
   stop(data: any): Observable<any> {
-    return this.http.post( this.apiUrl + 'User/endTrack', data);
+    return this.http.post( this.apiUrl + 'User/endTrack', data, {responseType: 'text'});
   } 
 }

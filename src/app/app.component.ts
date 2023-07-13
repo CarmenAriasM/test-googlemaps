@@ -48,7 +48,6 @@ export class AppComponent implements OnInit {
   showTrackingPosition(position: GeolocationPosition) {
     this.showInfo = true;
     this.datas.push({latitude: position.coords.latitude, longitude: position.coords.longitude, created_at: new Date()})
-    console.log(this.datas)
     const csvString = /* "data:text/csv;charset=utf-8,"  +  */[
       [
         "latitude",
