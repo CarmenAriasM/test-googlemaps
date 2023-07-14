@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   datas: any = [];
   showInfo: boolean = false;
   disabledStartButton: boolean = false;
+  disabledStopButton: boolean = false;
   clearId: any;
   input: any;
 
@@ -76,6 +77,7 @@ export class AppComponent implements OnInit {
     const formData = new FormData();
     formData.append('id', this.input );
     formData.append('data', this.csv );
+    this.disabledStopButton = true;
     // formData.append( 'data', new Blob([this.csv], { type: 'text/csv' }), 'csv');
     this.backendService.stop(formData).subscribe((data: any) => {
       console.log(data)

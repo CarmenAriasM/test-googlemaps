@@ -5,7 +5,7 @@
     <div class="btn-container">
         <input type="text" class="input" (keyup)="getValue($event)" #participant id="participant" placeholder="PARTICIPANT NUMBER">
         <button [disabled]="participant.value == '' || disabledStartButton" (click)="trackMe()" [ngClass]="{'disabled': participant.value == '' || disabledStartButton }">Start journey</button>
-        <button (click)="stop()">Stop journey</button>
+        <button [disabled]="disabledStopButton" (click)="stop()" [ngClass]="{'disabled': disabledStopButton }">Stop journey</button>
         <div *ngIf="datas[0]" class="data">
             <div>Your current location is: </div>
             <div>Latitude: {{datas[datas.length -1].latitude}}</div>
