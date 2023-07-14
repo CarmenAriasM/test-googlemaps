@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   externalDiv: any;
   datas: any = [];
   showInfo: boolean = false;
+  disabledStartButton: boolean = false;
   clearId: any;
   input: any;
 
@@ -26,6 +27,7 @@ export class AppComponent implements OnInit {
     this.sendData()
     if (navigator.geolocation) {
       this.clearId = navigator.geolocation.watchPosition((position) => {
+        this.disabledStartButton = true;
         this.showTrackingPosition(position);
       }, error => {
         console.log(error), {

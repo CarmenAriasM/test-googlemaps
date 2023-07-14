@@ -4,7 +4,7 @@
     </div>
     <div class="btn-container">
         <input type="text" class="input" (keyup)="getValue($event)" #participant id="participant" placeholder="PARTICIPANT NUMBER">
-        <button [disabled]="participant.value == ''" (click)="trackMe()" [ngClass]="{'disabled': participant.value == '' }">Start journey</button>
+        <button [disabled]="participant.value == '' || disabledStartButton" (click)="trackMe()" [ngClass]="{'disabled': participant.value == '' || disabledStartButton }">Start journey</button>
         <button (click)="stop()">Stop journey</button>
         <div *ngIf="datas[0]" class="data">
             <div>Your current location is: </div>
